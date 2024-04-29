@@ -29,7 +29,7 @@ class Image_transform:
             #Resize image to fit width
             wpercent = (w/float(image.size[0]))
             hsize = int((float(image.size[1])*float(wpercent)))
-            image = image.resize((w,hsize), Image.ANTIALIAS)
+            image = image.resize((w,hsize), Image.LANCZOS)
             
             #center the image vertically in the middle of the frame
             blank_space=h-image.size[1]
@@ -44,7 +44,7 @@ class Image_transform:
             #Resize image by height
             hpercent = (h/float(image.size[1]))
             wsize = int((float(image.size[0])*float(hpercent)))
-            image = image.resize((wsize,h), Image.ANTIALIAS)
+            image = image.resize((wsize,h), Image.LANCZOS)
             
             #center 
             blank_space=h-image.size[1]
@@ -58,7 +58,7 @@ class Image_transform:
             #Resize image by height
             hpercent = (h/float(image.size[1]))
             wsize = int((float(image.size[0])*float(hpercent)))
-            image = image.resize((wsize,h), Image.ANTIALIAS)
+            image = image.resize((wsize,h), Image.LANCZOS)
             
             #Center the image on the frame. First, set overflow
             left = (image.size[0] - w)/2
